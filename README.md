@@ -101,6 +101,74 @@ Automate research, monitoring, and information gathering with next-gen AI agents
 ---
 
 ## 🧩 Folder Structure
+agent-workflow-automator/
+│
+├── backend/                            # FastAPI backend
+│   ├── app/
+│   │   ├── agents/                     # Agent logic (LangGraph workflows, tools)
+│   │   ├── api/                        # API route handlers
+│   │   ├── services/                   # Business logic, LLMs, search, scraping, eval integrations
+│   │   ├── models/                     # Pydantic models & database schemas
+│   │   ├── db/                         # DB connection, ORM, migrations
+│   │   ├── core/                       # Core utilities, settings, config
+│   │   └── utils/                      # Misc helpers/utilities
+│   ├── tests/                          # Backend unit/integration tests
+│   ├── main.py                         # FastAPI entrypoint
+│   ├── requirements.txt
+│   ├── .env.example                    # Backend env variables template
+│   └── README.md
+│
+├── frontend/                           # Next.js + React frontend
+│   ├── components/                     # Reusable React components
+│   ├── pages/                          # Next.js pages
+│   ├── public/                         # Static assets
+│   ├── styles/                         # CSS/Tailwind
+│   ├── hooks/                          # Custom React hooks
+│   ├── utils/                          # Frontend utils/helpers
+│   ├── lib/                            # API clients (backend, Supabase, etc)
+│   ├── .env.example                    # Frontend env variables template
+│   ├── package.json
+│   ├── next.config.js
+│   └── README.md
+│
+├── shared/                             # (Optional) Shared code, types, or constants
+│   └── types/
+│
+├── .github/
+│   ├── workflows/                      # GitHub Actions CI/CD workflows
+│   └── ISSUE_TEMPLATE/
+│
+├── docs/                               # Project documentation, architecture diagrams
+│   └── architecture.md
+│
+├── .gitignore
+├── README.md                           # Project overview/readme (root)
+├── LICENSE
+└── docker-compose.yml                  # (Optional) For local development
+
+## Folder/Files Explained:
+backend/app/agents/ — Multi-agent orchestration logic, agent configs, tool wrappers.
+
+backend/app/api/ — REST endpoints (e.g., /api/workflows, /api/results).
+
+backend/app/services/ — Logic for LLM calls, Tavily/Firecrawl, vector DB, evaluation, etc.
+
+backend/app/models/ — Pydantic models, DB ORM models.
+
+backend/app/db/ — DB connection, migrations (e.g., Alembic).
+
+frontend/pages/ — Next.js routes/pages.
+
+frontend/components/ — React UI building blocks.
+
+frontend/lib/ — API clients for backend, Supabase, Pinecone, etc.
+
+.github/workflows/ — CI/CD (build, test, deploy pipelines).
+
+docs/ — High-level docs, diagrams, how-to guides.
+
+shared/types/ — Shared TypeScript types or Python data contracts if codegen/shared types.
+
 
 ---
 
